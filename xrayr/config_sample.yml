@@ -31,8 +31,8 @@
         CertDomain: "node1.test.com" # Domain to cert
         CertFile: ./cert/node1.test.com.cert # Provided if the CertMode is file
         KeyFile: ./cert/node1.test.com.key
-        Provider: alidns # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
-        Email: test@me.com
+        Provider: cloudflare # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
+        Email: ${domainemail}
         DNSEnv: # DNS ENV option used by DNS provider
-          ALICLOUD_ACCESS_KEY: aaa
-          ALICLOUD_SECRET_KEY: bbb
+          CF_API_EMAIL: ${account}
+          CF_API_KEY: ${cloudflareapi}
