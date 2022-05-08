@@ -174,10 +174,19 @@ config_xrayr(){
       read cert_file
       echo "enter your key file local if http pass here"
       read key_file
+      echo "enter your email for apply domain cert:"
+      read domainemail
+      echo "enter your account of cloudflare email:"
+      read cloudflareemail
+      echo "enter your cloudflare api:"
+      read cloudflareapi
       sed -i "s|CertMode:.*|CertMode: ${cert_type}|" ./config_sample.yml
       sed -i "s|CertDomain.*|CertDomain: ${cert_domin}|" ./config_sample.yml
       sed -i "s|CertFile.*|CertFile: ${cert_file}|" ./config_sample.yml
       sed -i "s|KeyFile.*|KeyFile: ${key_file}|" ./config_sample.yml
+      sed -i "s|Email.*|Email: ${domainemail}|" ./config_sample.yml
+      sed -i "s|CF_API_EMAIL.*|CF_API_EMAIL: ${cloudflareemail}|" ./config_sample.yml
+      sed -i "s|CF_API_KEY.*|CF_API_KEY: ${cloudflareapi}|" ./config_sample.yml
       fi
 }
 config_xrayr_docker(){
