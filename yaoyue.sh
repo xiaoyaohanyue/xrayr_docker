@@ -138,7 +138,7 @@ config_xrayr(){
       echo "enter your web token:"
       echo
       read xray_key
-      sed -i "s|NodeID:.*|NodeID: ${sspanel_node_id}|"  ./config_sample.yml
+      sed -i "s|NodeID:.*|NodeID: ${node_id}|"  ./config_sample.yml
       sed -i "s|ApiHost:.*|ApiHost: \"${xray_weburl}\"|" ./config_sample.yml
       sed -i "s|ApiKey:.*|ApiKey: \"${xray_key}\"|" ./config_sample.yml
       sed -i "s|PanelType.*|PanelType: ${panel_type}|" ./config_sample.yml
