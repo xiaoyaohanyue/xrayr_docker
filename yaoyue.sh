@@ -208,7 +208,7 @@ is_copy="n"
 	pre_install_docker_compose
     panel_list=(SSpanel V2board Proxypanel)
     node_type_list=(V2ray Shadowsocks Trojan)
-    cert_list=(http file)
+    cert_list=(http file dns none)
     echo "configura docker-compose.yml"
     mkdir -p yaoyue/xrayr/${container_name}
     cd yaoyue/xrayr/${container_name}
