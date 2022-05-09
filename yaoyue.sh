@@ -296,7 +296,7 @@ docker_install_ba(){
 }
 
 docker_compose_install(){
-    curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    curl -L "https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     chmod a+x /usr/local/bin/docker-compose
     rm -f `which dc`
     ln -s /usr/local/bin/docker-compose /usr/bin/dc
@@ -314,6 +314,12 @@ docker_install(){
     if [ ${ins_stats} -eq 0 ]
     then
     curl -fsSL https://get.docker.com | bash
+    echo "check and install docker-compose"
+    check_ins docker-compose
+    if [ ${ins_stats} -eq 0 ]
+    then
+    docker_compose_install
+    fi
     else
     check_ins docker-compose
     if [ ${ins_stats} -eq 0 ]
@@ -325,7 +331,12 @@ docker_install(){
     if [ ${ins_stats} -eq 0 ]
     then
     docker_install_ba
+    echo "check and install docker-compose"
+    check_ins docker-compose
+    if [ ${ins_stats} -eq 0 ]
+    then
     docker_compose_install
+    fi
     else
     check_ins docker-compose
     if [ ${ins_stats} -eq 0 ]
