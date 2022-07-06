@@ -2,7 +2,7 @@ version: '3'
 services:
   xrayr:
     container_name: yaoyue
-    image: crackair/xrayr:latest
+    image: xiaoyaohanyue/xrayr:v0.8.2.7
     volumes:
       - ./config/:/etc/XrayR/ # 映射配置文件夹
     restart: always
