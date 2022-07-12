@@ -157,20 +157,6 @@ config_xrayr(){
       sed -i "s|EnableDNS.*|EnableDNS: false|" ./config_sample.yml
       sed -i "s|DNSType.*|DNSType: AsIs|" ./config_sample.yml
       fi
-      echo "use ddns ?(y/n)"
-      echo
-      read ddns_o
-      if [ ${ddns_o} == "y" ];then
-      echo "enter youer domin:"
-      read cert_domin
-      echo "enter your account of cloudflare email:"
-      read cloudflareemail
-      echo "enter your cloudflare api:"
-      read cloudflareapi
-      sed -i "s|CertDomain.*|CertDomain: ${cert_domin}|" ./config_sample.yml
-      sed -i "s|CF_API_EMAIL.*|CF_API_EMAIL: ${cloudflareemail}|" ./config_sample.yml
-      sed -i "s|CF_API_KEY.*|CF_API_KEY: ${cloudflareapi}|" ./config_sample.yml
-      fi
       echo "use cert ?(y/n)"
       echo
       read cert_o
